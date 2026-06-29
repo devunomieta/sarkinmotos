@@ -10,14 +10,14 @@ const variants = [
     id: "alpine-white",
     name: "Alpine White",
     color: "#ffffff",
-    price: 185000,
+    price: 277500000,
     image: "/images/sports_car_hero.png",
   },
   {
     id: "matte-black",
     name: "Matte Black",
     color: "#1a1a1a",
-    price: 195000,
+    price: 292500000,
     image: "/images/sports_car_black.png",
   },
 ];
@@ -27,7 +27,7 @@ export default function PricingConfigurator() {
   const count = useMotionValue(activeVariant.price);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const formattedPrice = useTransform(rounded, (latest) => 
-    new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(latest)
+    new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN', maximumFractionDigits: 0 }).format(latest)
   );
 
   useEffect(() => {

@@ -59,6 +59,14 @@ export default function HeroSection() {
     };
   }, []);
 
+  // Force video playback for mobile
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(e => console.log("Autoplay blocked by browser:", e));
+    }
+  }, []);
+
   // Play audio safely only when we are sure the user has interacted
   useEffect(() => {
     if (!audioRef.current) return;
@@ -83,6 +91,7 @@ export default function HeroSection() {
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video 
+          ref={videoRef}
           src="/car.mp4" 
           autoPlay 
           loop 

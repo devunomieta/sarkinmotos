@@ -27,7 +27,7 @@ const carsData: Car[] = [
     id: 1,
     name: "Mercedes-AMG GT",
     tagline: "The Pinnacle of German Engineering",
-    price: "$177,000",
+    price: "₦265,500,000",
     accent: "text-[var(--color-gold)]",
     features: ["Handcrafted AMG 4.0L V8", "0-60mph in 3.1s", "Active Rear-Axle Steering", "AMG Performance Seats"],
     colors: [
@@ -40,7 +40,7 @@ const carsData: Car[] = [
     id: 2,
     name: "BMW M8 Competition",
     tagline: "Uncompromised M Power",
-    price: "$138,800",
+    price: "₦208,200,000",
     accent: "text-gray-300",
     features: ["617 Horsepower V8", "M xDrive All-Wheel Drive", "Carbon Fiber Roof", "Merino Leather Interior"],
     colors: [
@@ -53,7 +53,7 @@ const carsData: Car[] = [
     id: 3,
     name: "Porsche 911 Turbo S",
     tagline: "Relentless Performance",
-    price: "$230,400",
+    price: "₦345,600,000",
     accent: "text-[var(--color-gold)]",
     features: ["0-60mph in 2.6s", "Porsche Active Aerodynamics", "Ceramic Composite Brakes", "Sport Chrono Package"],
     colors: [
@@ -65,7 +65,7 @@ const carsData: Car[] = [
     id: 4,
     name: "Audi RS e-tron GT",
     tagline: "The Future of Grand Touring",
-    price: "$147,100",
+    price: "₦220,650,000",
     accent: "text-stone-300",
     features: ["Fully Electric Dual Motor", "637 Horsepower", "Matrix-design LED Headlights", "Carbon Fiber Details"],
     colors: [
@@ -77,7 +77,7 @@ const carsData: Car[] = [
     id: 5,
     name: "Tesla Roadster",
     tagline: "Breaking All Records",
-    price: "$250,000",
+    price: "₦375,000,000",
     accent: "text-[var(--color-gold)]",
     features: ["0-60mph in 1.9s", "620 Mile Range", "SpaceX Thruster Package", "Removable Glass Roof"],
     colors: [
@@ -95,8 +95,9 @@ function CarBlock({ car, index, onReserve }: { car: Car; index: number; onReserv
 
   return (
     <div
-      // All sections are pure black. We blend the cars into this black void.
-      className="sticky top-0 w-full min-h-screen flex flex-col md:flex-row items-center overflow-hidden border-t border-white/10 shadow-2xl bg-black text-white"
+      className={clsx(
+        "relative lg:sticky lg:top-0 w-full min-h-screen flex flex-col md:flex-row items-center overflow-hidden border-t border-white/10 shadow-2xl bg-black text-white"
+      )}
       style={{ zIndex: index + 1 }} // Keep stacking context low so Navbar (z-50) stays on top
     >
       {/* Left Side - Massive Car Image */}
@@ -117,7 +118,7 @@ function CarBlock({ car, index, onReserve }: { car: Car; index: number; onReserv
       </div>
 
       {/* Right Side - Details & Features */}
-      <div className="w-full md:w-2/5 min-h-[50vh] md:h-screen flex flex-col justify-center px-8 md:px-12 lg:px-16 pt-32 pb-8 bg-black/20 backdrop-blur-sm">
+      <div className="w-full md:w-2/5 min-h-[50vh] md:h-screen flex flex-col justify-center px-8 md:px-12 lg:px-16 pt-8 md:pt-32 pb-16 bg-black/20 backdrop-blur-sm">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -16,7 +16,7 @@ const fleet = [
     hp: "577 HP",
     acceleration: "3.1s",
     drivetrain: "RWD",
-    price: "$177,000",
+    price: "₦265,500,000",
     image: "/cars/car-1.png",
   },
   {
@@ -26,7 +26,7 @@ const fleet = [
     hp: "617 HP",
     acceleration: "3.0s",
     drivetrain: "AWD",
-    price: "$138,800",
+    price: "₦208,200,000",
     image: "/cars/car-2.png",
   },
   {
@@ -36,7 +36,7 @@ const fleet = [
     hp: "640 HP",
     acceleration: "2.6s",
     drivetrain: "AWD",
-    price: "$230,400",
+    price: "₦345,600,000",
     image: "/cars/car-3.png",
   },
   {
@@ -46,7 +46,7 @@ const fleet = [
     hp: "637 HP",
     acceleration: "2.9s",
     drivetrain: "AWD",
-    price: "$147,100",
+    price: "₦220,650,000",
     image: "/cars/car-4.png",
   },
   {
@@ -56,7 +56,7 @@ const fleet = [
     hp: "1000+ HP",
     acceleration: "1.9s",
     drivetrain: "AWD",
-    price: "$250,000",
+    price: "₦375,000,000",
     image: "/cars/car-5.png",
   }
 ];
@@ -129,6 +129,21 @@ export default function CarsPage() {
             ))}
           </div>
         </div>
+
+        {/* Financing Banner */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white/5 border border-[var(--color-gold)]/50 p-6 mb-12 flex flex-col md:flex-row items-center justify-between"
+        >
+          <div>
+            <h3 className="text-[var(--color-gold)] font-bold uppercase tracking-widest mb-1 text-lg">Drive Away Today: 40% Initial Deposit</h3>
+            <p className="text-gray-300 text-sm max-w-2xl">We offer highly flexible payment structures tailored for corporate workers and civil servants. Make a 40% down payment and spread your remaining balance comfortably over 3 to 6 months.</p>
+          </div>
+          <div className="mt-4 md:mt-0 shrink-0">
+            <span className="px-6 py-3 bg-[var(--color-gold)] text-black font-bold uppercase tracking-widest text-xs block text-center">Flexible Financing</span>
+          </div>
+        </motion.div>
 
         {/* Showroom Grid */}
         <motion.div
@@ -250,6 +265,9 @@ export default function CarsPage() {
                   <button className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest transition-all hover:bg-[var(--color-gold)] mt-8">
                     Submit Inquiry
                   </button>
+                  <p className="text-center text-xs text-[var(--color-gold)] mt-4 font-medium tracking-wide">
+                    Eligible for the 40% initial deposit financing plan.
+                  </p>
                 </form>
               )}
             </motion.div>

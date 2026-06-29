@@ -41,7 +41,7 @@ export default function Navbar() {
         {/* Center Logo */}
         <div className="absolute left-1/2 -translate-x-1/2">
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center justify-center">
-            <img src="/logo.png" alt="Sarkinmotos Logo" className="h-10 md:h-12 w-auto object-contain drop-shadow-md" />
+            <img src="/logo.png" alt="Sarkin Mota Autos Logo" className="h-10 md:h-12 w-auto object-contain drop-shadow-md" />
           </Link>
         </div>
 

@@ -20,7 +20,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Sarkinmotos | Premium Car Dealership",
+  title: "Sarkin Mota Autos | Premium Car Dealership",
   description: "Experience engineered perfection.",
 };
 

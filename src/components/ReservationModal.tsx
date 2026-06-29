@@ -133,6 +133,9 @@ export default function ReservationModal({ isOpen, onClose, initialCarName, init
                   >
                     Confirm Reservation
                   </button>
+                  <p className="text-center text-xs text-[var(--color-gold)] mt-4 font-medium tracking-wide">
+                    Ask about our 40% initial deposit financing plan.
+                  </p>
                 </form>
               </>
             )}
