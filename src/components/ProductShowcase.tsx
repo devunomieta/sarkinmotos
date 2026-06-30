@@ -167,11 +167,11 @@ function CarBlock({ car, index, onReserve }: { car: Car; index: number; onReserv
           </div>
 
           {/* Price & Buy Button */}
-          <div className="flex items-center justify-between mt-auto">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mt-auto space-y-4 md:space-y-0">
             <div className="text-2xl lg:text-3xl font-light">{car.price}</div>
             <button 
               onClick={() => onReserve(car.name, activeColor.name)}
-              className="flex items-center space-x-2 bg-white text-black px-6 py-3 lg:px-8 lg:py-4 rounded-full font-bold uppercase tracking-wider hover:bg-[var(--color-gold)] transition-colors group text-sm lg:text-base"
+              className="flex items-center justify-center space-x-2 bg-white text-black px-6 py-3 lg:px-8 lg:py-4 rounded-full font-bold uppercase tracking-wider hover:bg-[var(--color-gold)] transition-colors group text-sm lg:text-base w-full md:w-auto"
             >
               <span>Reserve</span>
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />

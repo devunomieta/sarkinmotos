@@ -60,10 +60,11 @@ export default function HeroSection() {
   }, []);
 
   // Force video playback for mobile
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoWrapperRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(e => console.log("Autoplay blocked by browser:", e));
+    const videoElement = videoWrapperRef.current?.querySelector("video");
+    if (videoElement) {
+      videoElement.play().catch(e => console.log("Autoplay blocked by browser:", e));
     }
   }, []);
 
@@ -90,14 +91,21 @@ export default function HeroSection() {
 
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <video 
-          ref={videoRef}
-          src="/car.mp4" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="w-full h-full object-cover opacity-60"
+        <div 
+          ref={videoWrapperRef}
+          className="w-full h-full"
+          dangerouslySetInnerHTML={{
+            __html: `
+              <video 
+                src="/car.mp4" 
+                autoplay 
+                loop 
+                muted 
+                playsinline
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;"
+              ></video>
+            `
+          }}
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
